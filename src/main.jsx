@@ -8,6 +8,7 @@ import Root from "./assets/components/root/Root.jsx";
 import About from "./assets/components/about/About.jsx";
 import Hero from "./assets/components/hero/Hero.jsx";
 import State from "./assets/components/state/State.jsx";
+import Home from "./assets/components/home/Home.jsx";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
       { index: true, path: "/about", Component: About },
       { path: "hero", Component: Hero },
       { path: "state", Component: State },
+      { path: "/", Component: Home },
     ],
   },
   // {
