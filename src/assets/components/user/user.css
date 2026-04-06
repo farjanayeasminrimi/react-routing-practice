@@ -1,0 +1,13 @@
+.user {
+  padding: 15px;
+  margin-top: 15px;
+  border: 1px solid green;
+  border-radius: 8px;
+}
+.btn {
+  padding: 8px 15px;
+  margin-top: 10px;
+  margin-right: 10px;
+  background-color: green;
+  border-radius: 5px;
+}

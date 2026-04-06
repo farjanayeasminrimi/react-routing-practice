@@ -19,6 +19,8 @@ const Sidebar = () => {
         <NavLink to="/about">About</NavLink>
         <NavLink to="/hero">Hero</NavLink>
         <NavLink to="/state">State</NavLink>
+        <NavLink to="/users">Users</NavLink>
+        <NavLink to="/todo">Todo</NavLink>
       </nav>
     </div>
   );

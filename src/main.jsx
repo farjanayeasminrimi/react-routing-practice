@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import { StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
@@ -9,7 +9,11 @@ import About from "./assets/components/about/About.jsx";
 import Hero from "./assets/components/hero/Hero.jsx";
 import State from "./assets/components/state/State.jsx";
 import Home from "./assets/components/home/Home.jsx";
+import Users from "./assets/components/users/Users.jsx";
+import Todo from "./assets/components/todo/Todo.jsx";
+import UserDetails from "./assets/components/UserDetails/UserDetails.jsx";
 
+const usersDataRes = fetch("https://jsonplaceholder.typicode.com/todos").then((res) => res.json());
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,6 +23,24 @@ const router = createBrowserRouter([
       { path: "hero", Component: Hero },
       { path: "state", Component: State },
       { path: "/", Component: Home },
+      {
+        path: "users",
+        loader: () => fetch("https://jsonplaceholder.typicode.com/users"),
+        Component: Users,
+      },
+      {
+        path: "todo",
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Todo usersDataRes={usersDataRes}></Todo>
+          </Suspense>
+        ),
+      },
+      {
+        path: "users/user/:id",
+        loader: ({ params }) => fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`),
+        Component: UserDetails,
+      },
     ],
   },
   // {
