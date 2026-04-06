@@ -3,3 +3,7 @@ nav {
   flex-direction: column;
   gap: 10px;
 }
+a.active {
+  color: red;
+  text-decoration: underline !important;
+}
