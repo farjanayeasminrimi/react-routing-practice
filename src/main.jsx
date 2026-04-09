@@ -43,14 +43,18 @@ const router = createBrowserRouter([
       },
     ],
   },
-  // {
-  //   path: "app",
-  //   Component: App,
-  // },
-  // {
-  //   path: "about",
-  //   element: <p>I am about section</p>,
-  // },
+  {
+    path: "app",
+    Component: App,
+  },
+  {
+    path: "about",
+    element: <p>I am about section</p>,
+  },
+  {
+    path: "*",
+    element: <p>Not Found 404!!!!!</p>,
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(
